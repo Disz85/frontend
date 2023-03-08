@@ -1,0 +1,21 @@
+@use '../../config/breakpoints' as screen-sizes;
+@use '../../mixins/breakpoints' as media;
+
+.articleList {
+    &__list {
+        padding: {
+            left : 0;
+        }
+    }
+    &__item {
+        @each $media, $breakpoint in screen-sizes.$breakpoints {
+            @include media.respond-above(md) {
+                @for $i from 1 through 100 {
+                    &--order-#{$media}-#{$i} {
+                        order: $i;
+                    }
+                }
+            }
+        }
+    }
+}

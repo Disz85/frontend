@@ -1,0 +1,58 @@
+@use 'sass:math';
+// CONFIG
+@use '../../config/close' as config;
+
+.close {
+    position: relative;
+
+    margin: auto;
+    width: config.$button-size;
+    height: config.$button-size;
+
+    cursor: pointer;
+
+
+    &::after,
+    &::before {
+        content: '';
+
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        will-change: transform;
+
+        display: block;
+        height: config.$button-line-width;
+        width: config.$button-size;
+        margin-top: math.div(config.$button-size ,2.08);
+
+        background-color: config.$button-color;
+        border-radius: 0.1rem;
+
+        transition: all #{config.$transition-delay} ease-in;
+    }
+
+    &::before {
+        transform: rotate(#{config.$transform-rotate});
+    }
+
+    &::after {
+        transform: rotate(-#{config.$transform-rotate});
+    }
+
+    &:hover {
+        &::before {
+            transform: rotate(-#{config.$transform-rotate});
+        }
+
+        &::after {
+            transform: rotate(#{config.$transform-rotate});
+        }
+
+    }
+
+}
+
+
+

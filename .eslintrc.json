@@ -1,0 +1,48 @@
+{
+    "env": {
+        "browser": true,
+        "es2022": true
+    },
+    "extends": [
+        // By extending from a plugin config, we can get recommended rules without having to add them manually.
+        "airbnb",
+        "eslint:recommended",
+        "plugin:import/recommended",
+        "plugin:jsx-a11y/recommended",
+        "plugin:@typescript-eslint/recommended",
+        // This disables the formatting rules in ESLint that Prettier is going to be responsible for handling.
+        // Make sure it's always the last config, so it gets the chance to override other configs.
+        "eslint-config-prettier"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": 13,
+        "sourceType": "module",
+        "project": ["./tsconfig.json"]
+    },
+    "settings": {
+        // Tells eslint how to resolve imports
+        "import/resolver": {
+            "node": {
+                "paths": [
+                    "src"
+                ],
+                "extensions": [
+                    ".js"
+                ]
+            }
+        }
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "arrow-body-style": "off",
+        "prefer-arrow-callback": "off",
+        "array-callback-return": "off",
+        "no-param-reassign": "off",
+        "eqeqeq": "error"
+    },
+    "plugins": [
+        "prettier",
+        "@typescript-eslint"
+    ]
+}

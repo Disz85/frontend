@@ -1,0 +1,20 @@
+// CONFIG
+@use '../../config/modal' as config;
+
+.modal {
+    &__dialog {
+        max-width: config.$max-width;
+        width:90vw;
+    }
+    &__content {
+    }
+    &__header {
+    }
+    &__title {
+    }
+    &__body {
+    }
+    &__footer {
+ ;
+    }
+}

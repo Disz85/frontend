@@ -1,0 +1,12 @@
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+// COLORS CONFIG AND OVERWRITES
+//––––––––––––––––––––––––––––––––––––––––––––––––––
+
+// CONFIG
+@use './colors' as color;
+
+$button-size: 1.5rem;
+$button-line-width: 0.25rem;
+$transition-delay: 280ms;
+$transform-rotate: 45deg;
+$button-color: color.$primary;

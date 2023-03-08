@@ -1,0 +1,12 @@
+// CONFIG
+@use '../../config/buttons' as config;
+
+.button {
+    @each $type in config.$button-types {
+        &--#{$type} {
+            &Outline {
+
+            }
+        }
+    }
+}
